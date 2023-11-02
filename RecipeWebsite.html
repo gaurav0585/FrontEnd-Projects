@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RECiPy.io | Home</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #ffdee9;
+        background-image: linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%);
+      }
+      .container {
+        height: 100vh;
+        width: 100vw;
+        overflow-x: hidden;
+      }
+
+      /* nav-styling */
+      .navbar ul {
+        list-style-type: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 70px;
+        background-color: #4158d0;
+        background-image: linear-gradient(
+          43deg,
+          #4158d0 0%,
+          #c850c0 46%,
+          #ffcc70 100%
+        );
+
+        color: azure;
+        font-size: 35px;
+        padding: 0 30px;
+      }
+      #navLogo > p {
+        color: azure;
+        font-size: 45px;
+        font-weight: bolder;
+        letter-spacing: 4px;
+        word-spacing: 7px;
+        font-style: italic;
+      }
+      .navItems > a {
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.679);
+      }
+      .navItems {
+        display: flex;
+        /* gap: 30px; */
+        justify-content: space-between;
+        width: 400px;
+      }
+
+      /* main-styling */
+      .contentBox {
+        width: 70%;
+        margin: auto;
+        /* border: 1px solid black; */
+      }
+      #item1 {
+        height: 400px;
+        background-color: rgba(240, 128, 128, 0.568);
+        margin: 30px 3px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 30px;
+        border-top-right-radius: 30px;
+        display: flex;
+        border: 1px solid rgba(240, 128, 128, 0.368);
+        box-shadow: 0px 1px 8px -2px black;
+      }
+
+
+/* scroll-bar customization */
+      ::-webkit-scrollbar{
+        width: 7px;
+      }
+      ::-webkit-scrollbar-thumb{
+        background-color: rgba(0, 139, 139, 0.793);
+        border-radius: 10px;
+        border: 2px solid darkgrey;
+      }
+      ::-webkit-scrollbar-track{
+        background-color: darkgrey;
+      }
+      .box1 {
+        height: 400px;
+        /* border: 1px solid black; */
+        /* margin: 10px; */
+        width: 65%;
+        padding: 20px;
+      }
+      .box2 {
+        height: 400px;
+        margin: 50px 20px 50px 10px;
+        width: 35%;
+      }
+
+      .heading {
+        /* background-color: rgb(66, 159, 195); */
+        height: 30px;
+        text-align: center;
+        text-transform: uppercase;
+        border-top: 1px black solid;
+        border-bottom: 1px black solid;
+        font-size: 18px;
+        font-weight: bolder;
+        /* font-style: italic; */
+        letter-spacing: 8px;
+        margin-bottom: 10px;
+      }
+      .ingredients ul {
+        height: 100px;
+        width: 60%;
+        list-style-type: none;
+        margin: auto;
+        padding: 5px 10px;
+        background-color: rgba(0, 139, 139, 0.463);
+        border: 0.1px solid black;
+      }
+      .ingredients ul li {
+        text-indent: 15px;
+      }
+      .ingredients ul p {
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: bolder;
+        font-size: 15px;
+        letter-spacing: 2px;
+        border-bottom: 0.5px solid black;
+      }
+      .process {
+        height: 220px;
+        margin-top: 10px;
+        padding: 10px 10px 10px 25px;
+        background-color: #c89e50b1;
+        overflow-y: auto;
+        text-align: justify;
+        line-height: 23px;
+      }
+      .process ol p {
+        text-align: center;
+        text-transform: uppercase;
+        text-decoration: 0.5px underline;
+        font-weight: bolder;
+        font-size: 20px;
+        letter-spacing: 5px;
+        /* border-bottom: 0.5px solid black; */
+      }
+
+      #item2 {
+        height: 400px;
+        background-color: rgba(241, 163, 163, 0.568);
+        margin: 30px 3px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 30px;
+        border-top-right-radius: 30px;
+        display: flex;
+        border: 1px solid rgba(241, 163, 163, 0.368);
+        box-shadow: 0px 1px 8px -2px darkred;
+
+      }
+      #item3 {
+        height: 400px;
+        width: 100%;
+        background-color: rgba(240, 128, 128, 0.568);
+        margin: 30px 3px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 30px;
+        border-top-right-radius: 30px;
+        display: flex;
+        border: 1px solid rgba(240, 128, 128, 0.368);
+        box-shadow: 0px 1px 8px -2px darkblue;
+
+      }
+
+      /* footer-styling */
+      .footerBox {
+        height: 30px;
+        color: azure;
+        font-size: 25px;
+        text-align: center;
+        background-color: #4158d0;
+        background-image: linear-gradient(
+          43deg,
+          #4158d0 0%,
+          #c850c0 46%,
+          #ffcc70 100%
+        );
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <div class="navbar">
+          <ul>
+            <li id="navLogo">
+              <p>RECiPy.io</p>
+            </li>
+            <li id="navItems">
+              <div class="navItems">
+                <a href="#">Prices</a>
+                <a href="#">About</a>
+                <a href="#">Contact us</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <main>
+        <div class="contentBox">
+          <div id="item1">
+            <div class="box1">
+              <div class="heading">
+                <h2>Gajar ka Halwa</h2>
+              </div>
+              <div class="ingredients">
+                <ul>
+                  <p>Ingredients required</p>
+                  <li>- Grated Carrots</li>
+                  <li>- Milk, Sugar, Ghee</li>
+                  <li>- 5-6 green cardamoms powdered finely</li>
+                  <li>- Chopped Cashews,Almonds,Raisins,etc</li>
+                </ul>
+              </div>
+              <div class="process">
+                <ol>
+                  <p>&nbsp; Steps to make &nbsp;</p>
+                  <li>
+                    First rinse, peel and then grate the carrots (8-9 medium
+                    sized tender juicy carrots), either with a hand held grater
+                    or in a food processor. You need approx 4 to 4.5 cups grated
+                    carrots.
+                  </li>
+                  <li>
+                    Making Carrot Halwa In a kadai or deep thick bottomed pan
+                    combine milk and grated carrots.
+                  </li>
+                  <li>
+                    On a low to medium flame, bring the whole mixture to a boil
+                    and then simmer.
+                  </li>
+                  <li>
+                    While the mixture is simmering on a low flame, keep on
+                    stirring in between.
+                  </li>
+                  <li>
+                    The grated carrots will cook in the milk and the milk will
+                    start to reduce and evaporate.
+                  </li>
+                  <li>
+                    When the milk has 75% reduced, add the ghee, sugar and
+                    powdered cardamom to the mixture.
+                  </li>
+                  <li>
+                    Stir well and continue to simmer and cook on a low flame.
+                  </li>
+                  <li>Do keep on stirring the halwa in between.</li>
+                  <li>
+                    Towards the end, add the cashews, almonds, saffron and
+                    raisins.
+                  </li>
+                  <li>
+                    Simmer the halwa till all the milk is evaporated. Then,
+                    Switch off the burner.
+                  </li>
+                  <li>
+                    Serve gajar halwa hot, warm or you can also serve it cold.
+                    garnish with some chopped dry fruits while serving.
+                  </li>
+                </ol>
+              </div>
+            </div>
+            <div class="box2">
+              <img
+                src="Gajar-Halwa.jpg"
+                alt="img1"
+                width="100%"
+                height="300px"
+              />
+            </div>
+          </div>
+
+          <div id="item2">
+            <div class="box1">
+              <div class="heading">
+                <h2>Gulab Jamun</h2>
+              </div>
+              <div class="ingredients">
+                <ul>
+                    <p>Ingredients required</p>
+                  <li>- Milk powder,Salt, Baking Soda</li>
+                  <li>- Sugar, Water</li>
+                  <li>- 1 tbsp Oil, Curd/Yogurt</li>
+                  <li>- Almonds, Cardamom, Saffron</li>
+                </ul>
+              </div>
+              <div class="process">
+                <ol>
+                  <p>&nbsp; Steps to make &nbsp;</p>
+                  <div><b>Making Dough Balls</b></div>
+                  <li>
+                    First stir the sugar, water, cardamom powder and saffron in
+                    a pan and keep it on fire. I have kept the cardamoms peels
+                    and these can be discarded when serving.
+                  </li>
+                  <li>
+                    Gently bring to a boil and continue to stir occasionally.
+                  </li>
+                  <li>
+                    Add some pistachios in the syrup. An optional step but
+                    tastes good. Make a thick syrup and switch off the fire much
+                    before the sugar solution reaches a one thread consistency.
+                  </li>
+                  <li>
+                    You can cook the sugar syrup till it reaches a half string
+                    consistency. On cooling, if the sugar syrup crystallizes,
+                    then just add 2 to 3 tablespoons water and warm the syrup
+                    again. It will again return to a liquid state.
+                  </li>
+                  <li>
+                    Mix the 1 cup milk powder, ¼ cup all-purpose flour or maida,
+                    a pinch of baking soda, a pinch of salt (optional) in a
+                    mixing bowl. Add 1 teaspoon oil OR ½ teaspoon ghee and 1 to
+                    2 tablespoons fresh curd or yogurt.
+                  </li>
+                  <li>
+                    Just mix everything lightly. Add some more curd if the
+                    mixture looks dry. Don't over mix or knead.
+                  </li>
+                  <li>
+                    You don't want gluten to form, so just mixing well is
+                    enough. The all-purpose flour is just added to bind the
+                    mixture. If gluten forms then the dough balls become dense
+                    and won't absorb any of the sugar syrup and the jamun will
+                    not be soft.
+                  </li>
+                  <li>
+                    The mixture will be sticky but smooth. Apply some oil on
+                    your palms and make small balls from the dough. These dough
+                    balls almost double when frying and also increase when
+                    soaked in the sugar syrup. So don't make large sized balls.
+                  </li>
+                  <li>
+                    There should be no cracks on the dough balls. They should be
+                    smooth. If there are cracks, then just add some 1 or 2
+                    teaspoons of curd or milk to the mixture and continue making
+                    the balls. Once done, then cover the balls with a kitchen
+                    towel.
+                  </li>
+                  <br>
+                  <div><b>Frying</b></div>
+                  <li>
+                    Heat oil for deep frying in a kadai or a pan. When the oil
+                    becomes medium hot, lower the flame.
+                  </li>
+                  <li>
+                    Add a small ball in the oil. The ball should slowly rise to
+                    the top from the bottom. If it does not rise then, the oil
+                    is not hot enough. If it rises quickly and browns also
+                    quickly, then the oil is too hot to fry.
+                  </li>
+                  <li>
+                    If the small ball does not crack or break while frying, you
+                    are alright to proceed further. If it cracks, then just add
+                    some 1 or 2 teaspoons flour to the dough and form the balls
+                    again. In an ideal case, the dough ball should not crack and
+                    should rise slowly to the top and should not get browned
+                    quickly.
+                  </li>
+                  <li>
+                    When you know the oil is hot enough and on a low flame or
+                    medium-low flame, then add 3 to 4 balls or more depending on
+                    the capacity of your kadai or pan.
+                  </li>
+                  <li>
+                    The balls have to be stirred with a slotted spoon frequently
+                    to get even browning. If there are handles on the pan, you
+                    can just lightly shake the pan so that the balls are evenly
+                    fried without using the spoon. But take care as hot oil is
+                    there in the pan. The balls should also not become browned
+                    too soon. They have to be cooked from the insides too.
+                  </li>
+                  <li>
+                    Keep on turning the balls until they become golden. If the
+                    oil becomes cold, then don't fry the balls. Increase the
+                    temperature and then fry. Otherwise, the balls would have a
+                    hard crisp thick cover when fried in a less hot oil and they
+                    won't absorb the sugar syrup. Plus they would absorb a lot
+                    of oil too.
+                  </li>
+                  <br>
+                  <div><b>Soaking Jamun In Sugar Syrup</b></div>
+                  <li>
+                    When the balls are evenly golden and browned, remove from
+                    the slotted spoon and add them directly into the sugar
+                    syrup.
+                  </li>
+                  <li>
+                    Keep the fried golden balls in the sugar syrup for at least
+                    1 to 2 hours before serving. This is done so that the jamun
+                    soaks up the sugar syrup which will make them soft and
+                    sweet. That's why in the mithai shops, the gulab jamun are
+                    always soaked in sugar syrup.
+                  </li>
+                  <li>
+                    If you feel the jamun is not soaking in the sugar syrup,
+                    then warm the whole gulab jamun along with the sugar syrup
+                    on stove-top for a couple of minutes. Cover and set aside.
+                    Just warm them, don't heat.
+                  </li>
+                  <li>
+                    Gulab jamun can be served warm or cold. If they are at room
+                    temperature, then warm in the microwave and serve them
+                    topped with sugar syrup and garnished with pistachios or
+                    almond slices.
+                  </li>
+                </ol>
+              </div>
+            </div>
+            <div class="box2">
+              <img
+                src="Gulab-jamun.jfif"
+                alt="img2"
+                width="100%"
+                height="300px"
+              />
+            </div>
+          </div>
+
+          <div id="item3">
+            <div class="box1">
+              <div class="heading">
+                <h2>Samosa</h2>
+              </div>
+              <div class="ingredients">
+                <ul>
+                    <p>Ingredients required</p>
+                    <li>- Cumin seeds, Ginger, Boiled Potato</li>
+                    <li>- Olive oil, Water, Ghee</li>
+                    <li>- Red-chilli, Garam masala Powder</li>
+                    <li>- Salt, Green chilli, Coriander leaves</li>
+                  </ul>
+                </ul>
+              </div>
+              <div class="process">
+                <ol>
+                  <p>&nbsp; Steps to make &nbsp;</p>
+                  <li>
+                    Sauté cumin seeds for potato filling. To make delicious
+                    samosas at home, first, make the filling. Put a pan on
+                    medium flame and add 2 tsp olive oil in it. Once the oil is
+                    hot enough, add cumin seeds and allow them to crackle.
+                  </li>
+                  <li>
+                    Add spices and boiled potatoes and cook for a while. Now,
+                    add whole coriander seeds, ginger and green chilli. Saute
+                    for a minute and then add chopped cashews and raisins,
+                    peanuts if you like them, boiled and mashed potatoes, cumin
+                    powder, coriander powder, garam masala powder, red chilli
+                    powder, salt to taste, kasoori methi leaves, coriander
+                    leaves. Mix well and saute for 2 minutes. Your stuffing is
+                    ready!
+                  </li>
+                  <li>
+                    Prepare the dough for the Samosa. Now, to prepare the dough,
+                    take a mixing bowl and combine all-purpose flour along with
+                    carom seeds and salt. Mix and then add ghee and start
+                    kneading by adding a little water at a time. Ensure that you
+                    add water gradually and make a firm dough. A soft dough will
+                    not make your samosas crispy. Cover the dough with a damp
+                    muslin cloth and keep aside for about half an hour.
+                  </li>
+                  <li>
+                    Roll the dough in small puris and cut into half. Once done,
+                    roll out few small-sized balls from the dough. Flatten them
+                    further with the help of your palms and then with a rolling
+                    pin. Give them a round shape and cut in half. Now dip your
+                    hands in water, fold the edges of the semi-circle in order
+                    to give it a cone shape.
+                  </li>
+                  <li>
+                    Fill the semi-circle with potato filling and deep fry. Take
+                    the filling with the help of a spoon and stuff it in the
+                    cone. Seal the ends properly by pressing the edges lightly
+                    with your fingers. Then, heat olive oil in a pan and deep
+                    fry the samosas on low heat until they turn golden brown and
+                    crispy. Serve with tomato ketchup and green chutney. Enjoy
+                    it as a tea-time snack!
+                  </li>
+                </ol>
+              </div>
+            </div>
+            <div class="box2">
+              <img src="samosa.jpg" alt="img3" width="100%" height="300px" />
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <div class="footerBox">
+          <p>Copyright &copy RECiPy.io Pvt Ltd 2023 All Rights Reserved</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
