@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stone Paper Scissor</title>
+</head>
+<body>
+    <p id="user"></p>
+    <p id="system"></p>
+    <!-- <button onclick="result()">GET</button> -->
+    <br>
+    <p id="display"></p>
+</body>
+
+<script>
+    let sys = ["stone", "paper", "scissor"] ;
+    let newSys = sys[Math.floor(Math.random()*3)] ;
+    let user = prompt("Enter your choice : ");
+    user = user.toLowerCase();
+
+    document.getElementById("user").innerHTML = "You chose --> " + user ;
+    document.getElementById("system").innerHTML = "System chose --> " + newSys ;
+    
+
+        if(newSys=="stone" && user=="paper")
+        {
+            document.getElementById("display").innerHTML = "<b>YOU WON</b>";
+        }
+        else if(newSys=="stone" && user=="scissor")
+        {
+            document.getElementById("display").innerHTML = "<b>SysteM WON</b>";
+        }
+        else if(newSys=="stone" && user=="stone")
+        {
+            document.getElementById("display").innerHTML = "<b>MATCH DRAW</b>";
+        }
+        else if(newSys=="paper" && user=="stone")
+        {
+            document.getElementById("display").innerHTML = "<b>SysteM WON</b>";
+        }
+        else if(newSys=="paper" && user=="scissor")
+        {
+            document.getElementById("display").innerHTML = "<b>YOU WON</b>";
+        }
+        else if(newSys=="paper" && user=="paper")
+        {
+            document.getElementById("display").innerHTML = "<b>MATCH DRAW</b>";
+        }
+        else if(newSys=="scissor" && user=="stone")
+        {
+            document.getElementById("display").innerHTML = "<b>YOU WON</b>";
+        }
+        else if(newSys=="scissor" && user=="paper")
+        {
+            document.getElementById("display").innerHTML = "<b>SysteM WON</b>";
+        }
+        else
+        {
+            document.getElementById("display").innerHTML = "<b>MATCH DRAW</b>";
+        }
+    
+
+</script>
+</html>
