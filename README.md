@@ -1,2 +1,2 @@
-# Frontend-Projects
-This repo consists of some projects made using HTML, CSS, JavaScript, React and more.
+# Time-clock
+In this repo, we've made a time-clock using Html, Css and JavaScript only.
